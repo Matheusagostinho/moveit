@@ -38,15 +38,24 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
-          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+          <meta name="application-name" content="Moveit" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="default"
           />
+          <meta name="apple-mobile-web-app-title" content="Moveit" />
+          <meta name="description" content="Mova-se!" />
+          <meta name="format-detection" content="telephone=no" />
+          <meta name="mobile-web-app-capable" content="yes" />
 
-          <meta name="description" content="Description" />
+          <meta
+            name="description"
+            content="Para Evitar problemas futuros, mova-se!"
+          />
           <meta name="keywords" content="Keywords" />
           <meta name="theme-color" content="#121214" />
 
