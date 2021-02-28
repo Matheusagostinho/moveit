@@ -1,30 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 300;
-  font-display:swap;
-  src: local(''),
-       url('/fonts/poppins-v15-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-display:swap;
-  src: local(''),
-       url('/fonts/poppins-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  font-display:swap;
-  src: local(''),
-       url('/fonts/poppins-v15-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
+
 *{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,14 +9,36 @@ const GlobalStyles = createGlobalStyle`
   padding: 0;
   box-sizing:border-box;
 }
-${({ theme }) => css`
-  html {
-    font-size: 62.5%;
+
+    html {
+      font-size: 68.75%;
+    }
+
+@media (max-width: 1080px) {
+    html {
+      font-size: 62.5%;
+    }
   }
 
+  @media (max-width: 720px) {
+    html {
+      font-size: 56.25%;
+    }
+  }
+${({ theme }) => css`
   body {
     font-family: ${theme.font.family};
     font-size: ${theme.font.sizes.medium};
+    background-color: ${theme.colors.mainBg};
+    color: ${theme.colors.white};
+  }
+  button {
+    cursor: pointer;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 `}
 

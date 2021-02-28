@@ -8,7 +8,7 @@ export default {
   },
   font: {
     family:
-      "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
     light: 300,
     normal: 400,
     bold: 600,
@@ -24,12 +24,18 @@ export default {
   colors: {
     primary: '#f2bc0c',
     secondary: '#3049E6',
-    mainBg: '#4c1566',
+    mainBg: '#121214',
     white: '#FAFAFA',
     black: '#030517',
     lightGray: '#EAEAEA',
     gray: '#8F8F8F',
-    darkGray: '#2E2F42'
+    darkGray: '#2E2F42',
+    blackLight: '#202024',
+    blue: '#5965e0',
+    blueDark: '#4953b8',
+    blueTwitter: '#2aa9e0',
+    red: '#e83f5b',
+    green: '#4cd62b'
   },
   spacings: {
     xxsmall: '0.8rem',
