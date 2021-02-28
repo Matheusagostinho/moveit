@@ -6,7 +6,10 @@ export function Profile() {
   const { level } = useContext(ChallengeContext)
   return (
     <S.Container>
-      <img src="https://github.com/matheusAgostinho.png" alt="" />
+      <img
+        src="https://github.com/matheusAgostinho.png"
+        alt="Matheus Agostinho"
+      />
       <div>
         <strong>Matheus Agostinho</strong>
         <p>

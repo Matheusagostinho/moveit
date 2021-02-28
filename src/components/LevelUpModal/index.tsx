@@ -22,7 +22,7 @@ export function LevelUpModal() {
       <S.Container isActive={opacty}>
         <header> {level}</header>
         <strong>Parabéns</strong>
-        <p>Você alnçou um novo level.</p>
+        <p>Você alcançou um novo level.</p>
         <button type="button" onClick={closeLevelUpModal}>
           <img src="/icons/close.svg" alt="fechar modal" />
         </button>
