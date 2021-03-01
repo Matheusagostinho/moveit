@@ -32,7 +32,9 @@ interface ChallengeContextData {
   isLevelUpModalOpen: boolean
 }
 
-
+export function isMobile(): boolean {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
 
 export const ChallengeContext = createContext({} as ChallengeContextData)
@@ -64,7 +66,7 @@ export function ChallengeProvider({
   useEffect(() => {
     Notification.requestPermission()
   }, [])
-  const  isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 
   useEffect(() => {
     Cookie.set('level', String(level))
@@ -80,7 +82,7 @@ export function ChallengeProvider({
     setActiveChallenge(challenge)
     new Audio('/notification.mp3').play()
 
-    if(isMobile){
+    if(isMobile()){
       if (Notification.permission === 'granted') {
       // new Notification('Novo desafio🎉', {
       //   body: `Valendo ${challenge.amount} xp!`,
