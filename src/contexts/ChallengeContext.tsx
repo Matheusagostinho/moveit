@@ -33,7 +33,7 @@ interface ChallengeContextData {
 }
 
 export function isMobile(): boolean {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  return /Safari|iOS Safari|Safari|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
 
@@ -56,6 +56,8 @@ export function ChallengeProvider({
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false)
 
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
+
+
   function levelUp() {
     setLevel(level + 1)
     setIsLevelUpModalOpen(true)
@@ -64,7 +66,13 @@ export function ChallengeProvider({
     setIsLevelUpModalOpen(false)
   }
   useEffect(() => {
+   if(!isMobile()){
     Notification.requestPermission()
+   }
+   console.log(isMobile());
+
+
+
   }, [])
 
 
@@ -82,7 +90,6 @@ export function ChallengeProvider({
     setActiveChallenge(challenge)
     new Audio('/notification.mp3').play()
 
-    if(isMobile()){
       if (Notification.permission === 'granted') {
       // new Notification('Novo desafio🎉', {
       //   body: `Valendo ${challenge.amount} xp!`,
@@ -113,7 +120,7 @@ export function ChallengeProvider({
           })
         )
       })
-    }
+
     }
 
 

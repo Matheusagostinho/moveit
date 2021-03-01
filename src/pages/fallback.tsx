@@ -5,7 +5,7 @@ import Head from 'next/head'
 export default () => (
   <>
     <Head>
-      <title>Moveit | Off-line</title>
+      <title>Moveit | Inicio</title>
     </Head>
     <Main></Main>
   </>
