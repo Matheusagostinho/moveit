@@ -64,6 +64,7 @@ export function ChallengeProvider({
   useEffect(() => {
     Notification.requestPermission()
   }, [])
+  const  isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
   useEffect(() => {
     Cookie.set('level', String(level))
@@ -71,13 +72,16 @@ export function ChallengeProvider({
     Cookie.set('challengesCompleted', String(challengesCompleted))
   }, [level, currentExperience, challengesCompleted])
 
+
+
   function startNewChallenge() {
     const randomChallengeIndex = Math.floor(Math.random() * challenges.length)
     const challenge = challenges[randomChallengeIndex]
     setActiveChallenge(challenge)
     new Audio('/notification.mp3').play()
 
-    if (Notification.permission === 'granted') {
+    if(isMobile){
+      if (Notification.permission === 'granted') {
       // new Notification('Novo desafio🎉', {
       //   body: `Valendo ${challenge.amount} xp!`,
       //   data: `Valendo ${challenge.amount} xp!`
@@ -107,6 +111,7 @@ export function ChallengeProvider({
           })
         )
       })
+    }
     }
 
 
