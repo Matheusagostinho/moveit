@@ -4,6 +4,8 @@ import Cookie from 'js-cookie'
 import challenges from '../../challenges.json'
 import { LevelUpModal } from 'components/LevelUpModal'
 
+import '../../service-worker.d.ts'
+
 interface ChallengeProviderProps {
   children: ReactNode
   level: number
@@ -29,6 +31,9 @@ interface ChallengeContextData {
   closeLevelUpModal: () => void
   isLevelUpModalOpen: boolean
 }
+
+
+
 
 export const ChallengeContext = createContext({} as ChallengeContextData)
 
@@ -82,8 +87,30 @@ export function ChallengeProvider({
           data: `Valendo ${challenge.amount} xp!`,
           body: `Valendo ${challenge.amount} xp!`
         })
+
+      })
+
+      self.addEventListener('notificationclick', function (event: any) {
+        event.notification.close()
+        event.waitUntil(
+           clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function (clientList: any) {
+            if (clientList.length > 0) {
+              let client = clientList[0]
+              for (let i = 0; i < clientList.length; i++) {
+                if (clientList[i].focused) {
+                  client = clientList[i]
+                }
+              }
+              return client.focus()
+            }
+            return clients.openWindow('/')
+          })
+        )
       })
     }
+
+
+
   }
   function resetChallenge() {
     setActiveChallenge(null)

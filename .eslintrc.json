@@ -3,7 +3,9 @@
     "browser": true,
     "es2020": true,
     "jest": true,
-    "node": true
+    "node": true,
+    "clients": true,
+"self": true
   },
   "settings": {
     "react": {
