@@ -25,7 +25,7 @@ export function LogIn() {
             SignIn with GitHub
           </button>
           <button onClick={() => signIn('auth0') }>
-            SignIn with Facebook
+            SignIn with Email
           </button>
 
         </div>

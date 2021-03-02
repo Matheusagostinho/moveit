@@ -11,6 +11,11 @@ const options = {
     Providers.Facebook({
       clientId: process.env.FACEBOOK_CLIENT_ID,
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+    }),
+    Providers.Auth0({
+      clientId: process.env.AUTH0_CLIENT_ID,
+      clientSecret: process.env.AUTH0_CLIENT_SECRET,
+      domain: process.env.AUTH0_DOMAIN
     })
   ],
 
