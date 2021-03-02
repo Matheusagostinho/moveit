@@ -1,5 +1,5 @@
 
-import { getSession, signIn } from 'next-auth/client'
+import { signIn } from 'next-auth/client'
 
 import * as S from './styles'
 
