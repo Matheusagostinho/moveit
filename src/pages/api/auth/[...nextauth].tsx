@@ -13,6 +13,8 @@ const options = {
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET!
     })
   ],
+
+  database: process.env.DATABASE_URL,
 }
 
 export default (req: NextApiRequest, res: NextApiResponse) =>
