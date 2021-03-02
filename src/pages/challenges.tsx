@@ -57,14 +57,11 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   } = req.cookies as CookiesProps
 
 
-  const session = await getSession({ req });
-
-
   return {
     props: {
       level: Number(level),
-      currentExperience: Number(level),
-      challengesCompleted: Number(level),
+      currentExperience: Number(currentExperience),
+      challengesCompleted: Number(challengesCompleted),
 
 
     }
