@@ -1,4 +1,3 @@
-import { LogIn } from 'containers/LogIn'
 import { Main } from 'containers/Main'
 import { ChallengeProvider } from 'contexts/ChallengeContext'
 import { GetServerSideProps } from 'next'
@@ -29,11 +28,7 @@ export default function Challagens(props: HomeProps) {
       }, 1000)
     }, [])
     return (
-      <>
-        <div>
-          <LogIn/>
-        </div>
-      </>
+          <Main/>
     )
   }
 
