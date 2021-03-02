@@ -5,7 +5,7 @@
     "jest": true,
     "node": true,
     "clients": true,
-"self": true
+    "self": true
   },
   "settings": {
     "react": {

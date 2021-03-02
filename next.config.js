@@ -6,6 +6,7 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = withPWA({
   pwa: {
     dest: 'public',
-    swSrc: 'service-worker.js'
+    swSrc: 'service-worker.js',
+    disable: process.env.NODE_ENV === 'development'
   }
 })

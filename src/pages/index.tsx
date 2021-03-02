@@ -1,42 +1,50 @@
-import { Main } from 'containers/Main'
-import { ChallengeProvider } from 'contexts/ChallengeContext'
+
+import {LogIn} from 'containers/LogIn'
+import { Session } from 'next-auth'
 import { GetServerSideProps } from 'next'
+import { useSession, getSession } from 'next-auth/client'
+import  Router  from 'next/router'
+import { useEffect } from 'react'
 
-interface HomeProps {
-  level: number
-  currentExperience: number
-  challengesCompleted: number
+
+
+interface LoginProps{
+  session:   Session | null
 }
 
-interface CookiesProps {
-  level: string
-  currentExperience: string
-  challengesCompleted: string
-}
 
-export default function Home(props: HomeProps) {
+
+// if (typeof window !== 'undefined' && loading) return null
+
+
+export default function Home({session}: LoginProps) {
+
+
+  useEffect(() => {
+    if (session) {
+      Router.push('/challenges')
+    }
+  }, [session])
   return (
-    <ChallengeProvider
-      level={props.level}
-      currentExperience={props.currentExperience}
-      challengesCompleted={props.challengesCompleted}
-    >
-      <Main></Main>
-    </ChallengeProvider>
+  <>
+    {session && (
+      <div>
+        <h1>Carrregando...</h1>
+      </div>
+    )}
+    {!session && <LogIn />}
+  </>
+
+
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
-  const {
-    level,
-    currentExperience,
-    challengesCompleted
-  } = req.cookies as CookiesProps
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getSession(ctx)
   return {
-    props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted)
-    }
+    props: { session },
   }
 }
+
+

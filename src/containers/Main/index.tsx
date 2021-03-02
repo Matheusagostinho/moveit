@@ -17,7 +17,8 @@ export function Main() {
       <section>
         <CountDownProvider>
           <div>
-            <Profile></Profile>
+
+              <Profile></Profile>
             <CompletedChallenges></CompletedChallenges>
             <CountDown></CountDown>
           </div>

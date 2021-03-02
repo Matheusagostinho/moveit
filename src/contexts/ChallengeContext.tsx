@@ -5,6 +5,7 @@ import challenges from '../../challenges.json'
 import { LevelUpModal } from 'components/LevelUpModal'
 
 import '../../service-worker.d.ts'
+import {  UserProvider } from './UserContext'
 
 interface ChallengeProviderProps {
   children: ReactNode
@@ -88,7 +89,10 @@ export function ChallengeProvider({
     const randomChallengeIndex = Math.floor(Math.random() * challenges.length)
     const challenge = challenges[randomChallengeIndex]
     setActiveChallenge(challenge)
-    new Audio('/notification.mp3').play()
+    if(!isMobile()){
+      new Audio('/notification.mp3').play()
+
+
 
       if (Notification.permission === 'granted') {
       // new Notification('Novo desafio🎉', {
@@ -121,7 +125,7 @@ export function ChallengeProvider({
         )
       })
 
-    }
+    }}
 
 
 
@@ -163,7 +167,9 @@ export function ChallengeProvider({
         isLevelUpModalOpen
       }}
     >
+      <UserProvider>
       {children}
+      </UserProvider>
       {isLevelUpModalOpen && <LevelUpModal />}
     </ChallengeContext.Provider>
   )
