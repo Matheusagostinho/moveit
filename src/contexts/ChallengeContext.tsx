@@ -70,9 +70,6 @@ export function ChallengeProvider({
    if(isMobile()){
     Notification.requestPermission()
    }
-   console.log(isMobile());
-
-
 
   }, [])
 
