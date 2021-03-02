@@ -34,7 +34,7 @@ interface ChallengeContextData {
 }
 
 export function isMobile(): boolean {
-  return /Safari|iOS Safari|Safari|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  return /Safari|iOS Safari|iPhone|iPad|iPod|BlackBerry|Opera Mini/i.test(navigator.userAgent);
 }
 
 

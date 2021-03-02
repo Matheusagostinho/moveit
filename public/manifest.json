@@ -18,7 +18,7 @@
   "background_color": "#121214",
   "description": "Mova-se!",
   "display": "standalone",
-  "start_url": "/",
+  "start_url": "/fallback",
   "scope": "/",
   "theme_color": "#121214"
 
