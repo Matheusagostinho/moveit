@@ -18,7 +18,6 @@ interface LoginProps{
 export default function Home() {
   const [session, loading] = useSession()
 
-  // if (typeof window !== 'undefined' && loading) return null
 
   useEffect(() => {
     if (session) {
@@ -28,16 +27,7 @@ export default function Home() {
 
 
   return (
-  <>
-    {session && (
-      <div>
-        <Main/>
-      </div>
-    )}
-    {!session && <LogIn />}
-  </>
-
-
+ <LogIn />
   )
 }
 

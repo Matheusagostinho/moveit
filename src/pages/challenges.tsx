@@ -28,9 +28,6 @@ export default function Challagens(props: HomeProps) {
         Router.push('/')
       }, 1000)
     }, [])
-    return (
-          <LogIn/>
-    )
   }
 
   if (session) {
