@@ -1,7 +1,7 @@
 import { Main } from 'containers/Main'
 import { ChallengeProvider } from 'contexts/ChallengeContext'
 import { GetServerSideProps } from 'next'
-import { useSession } from 'next-auth/client'
+import { getSession, useSession } from 'next-auth/client'
 import Router from 'next/router'
 import { useEffect } from 'react'
 interface HomeProps {
@@ -49,12 +49,21 @@ export default function Challagens(props: HomeProps) {
 }
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const {
     level,
     currentExperience,
     challengesCompleted
   } = req.cookies as CookiesProps
+
+
+  const session = await getSession({ req });
+
+  if (!session) {
+    res.writeHead(302, {
+      Location: "/",
+    });
+  }
   return {
     props: {
       level: Number(level),
