@@ -4,11 +4,6 @@ import { signIn } from 'next-auth/client'
 import * as S from './styles'
 
 
-
-
-
-
-
 export function LogIn() {
 
 
@@ -25,9 +20,12 @@ export function LogIn() {
         </main>
 
         <div>
-        <button onClick={() => signIn('github') }>
-            <img src="/icons/Github.svg" alt="github logo" />
+        <button onClick={() => signIn('github',  {callbackUrl: "/"}) }>
+            {/* <img src="/icons/Github.svg" alt="github logo" /> */}
             SignIn with GitHub
+          </button>
+          <button onClick={() => signIn('github',  {callbackUrl: "/"}) }>
+            SignIn with Facebook
           </button>
 
         </div>

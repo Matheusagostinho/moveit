@@ -1,7 +1,6 @@
 import { ChallengeContext } from 'contexts/ChallengeContext'
-import { UserContext } from 'contexts/UserContext'
 import { useContext, useEffect, useState } from 'react'
-import {getSession, useSession} from 'next-auth/client'
+import {getSession} from 'next-auth/client'
 import * as S from './styles'
 
 export function Profile() {

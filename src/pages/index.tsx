@@ -14,11 +14,16 @@ interface LoginProps{
 
 
 
-// if (typeof window !== 'undefined' && loading) return null
+export default function Home() {
+  const [session, loading] = useSession()
 
+  // if (typeof window !== 'undefined' && loading) return null
 
-export default function Home({session}: LoginProps) {
-
+  useEffect(() => {
+    if (session) {
+      Router.push('/challenges')
+    }
+  }, [session])
 
 
   return (
@@ -36,15 +41,9 @@ export default function Home({session}: LoginProps) {
 }
 
 
-export const getServerSideProps: GetServerSideProps = async ({req, res}) => {
+export const getServerSideProps: GetServerSideProps = async ({req}) => {
   const session = await getSession({ req });
 
-  if (session) {
-    res.writeHead(302, {
-      Location: "/challanges",
-    });
-    res.end();
-  }
   return {
     props: {session}
   };

@@ -66,18 +66,9 @@ export const Container = styled.div`
         &:hover {
         background: ${shade(0.2, '#4953b8')};
           }
-      }
-      .metro{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 56px;
-        border-radius: 10px;
-        border: 0;
-        padding: 0 56px;
-        font-weight: 600;
-        transition: background-color 0.2s;
-        width:100%;
+          :first-child{
+            margin-bottom:16px;
+          }
       }
 
 
