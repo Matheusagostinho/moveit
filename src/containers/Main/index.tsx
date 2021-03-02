@@ -28,7 +28,9 @@ export function Main() {
           </div>
         </CountDownProvider>
       </section>
+      <footer>
       <button onClick={() => signOut()}>Sair</button>
+      </footer>
     </S.Container>
   )
 }

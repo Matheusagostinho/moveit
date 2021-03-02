@@ -4,7 +4,6 @@ export const Container = styled.div`
   max-width: 992px;
   margin: 0 auto;
   padding: 2.5rem 2rem;
-  align-items: center;
   display: flex;
   flex-direction: column;
   @media (min-width: 720px) {
@@ -22,14 +21,25 @@ export const Container = styled.div`
     gap: 6.25rem;
     align-content: center;
   }
-  > button{
+  > footer {
+      align-items:center;
+      display:flex;
+    button{
     background:transparent;
     width:100%;
     max-width:100px;
     color:#8F8F8F;
     font-size:1.5rem;
-    border:0 ;
+    border:0;
+    transition: color 0.2s ease 0s;
+    :hover{
+      color:#fafafa;
+    }
 
+  }
+
+
+  }
 
 
   @media (max-width: 720px) {
