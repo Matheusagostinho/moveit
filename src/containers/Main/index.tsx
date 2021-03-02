@@ -6,6 +6,7 @@ import { ExperienceBar } from 'components/ExperienceBar'
 import { Profile } from 'components/Profile'
 import Head from 'next/head'
 import * as S from './styles'
+import { signOut } from 'next-auth/client'
 
 export function Main() {
   return (
@@ -27,6 +28,7 @@ export function Main() {
           </div>
         </CountDownProvider>
       </section>
+      <button onClick={() => signOut()}>Sair</button>
     </S.Container>
   )
 }

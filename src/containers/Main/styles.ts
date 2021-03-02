@@ -22,6 +22,13 @@ export const Container = styled.div`
     gap: 6.25rem;
     align-content: center;
   }
+  button{
+    background:transparent;
+    width:100%;
+    max-width:100px;
+    color:#8F8F8F;
+    font-size:2.5rem;
+
 
   @media (max-width: 720px) {
     section {
