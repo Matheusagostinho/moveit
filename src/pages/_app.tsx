@@ -7,8 +7,8 @@ import theme from 'styles/theme'
 function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
       <Provider session={pageProps.session}>
+      <GlobalStyles />
       <Component {...pageProps} />
       </Provider>
     </ThemeProvider>
