@@ -40,7 +40,7 @@ export const getServerSideProps = async (ctx) => {
   const { req, res } = ctx;
   const session = await getSession({ req });
 
-  if (session && req) {
+  if (session) {
     res.writeHead(302, {
       Location: "/challenges",
     });
