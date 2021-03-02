@@ -25,10 +25,7 @@ export function LogIn() {
         </main>
 
         <div>
-        <button onClick={() => signIn('github', {
-                  callbackUrl: "https://moveit-matheusagostinho.vercel.app/challenges",
-
-                }) }>
+        <button onClick={() => signIn('github') }>
             <img src="/icons/Github.svg" alt="github logo" />
             SignIn with GitHub
           </button>
