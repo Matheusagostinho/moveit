@@ -11,7 +11,7 @@ export function ExperienceBar() {
     (currentExperience * 100) / experienceToNextLevel
   )
   return (
-    <S.Container>
+    <S.Container className="pageFadeIn">
       <span>0 xp</span>
       <div>
         <div style={{ width: `${percentToNextLevel}%` }} />

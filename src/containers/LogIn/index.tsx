@@ -10,16 +10,16 @@ export function LogIn() {
   return (
     <S.Container>
      <div>
-        <header>
+        <header className="pageFadeIn">
           <img src="/images/Logo.svg" alt="" />
         </header>
 
-        <main>
+        <main className="pageFadeIn">
           <strong>Seja Bem-vindo</strong>
           <p>Faça login para continuar</p>
         </main>
 
-        <div>
+        <div className="pageFadeIn">
         <button onClick={() => signIn('github') }>
             {/* <img src="/icons/Github.svg" alt="github logo" /> */}
             SignIn with GitHub

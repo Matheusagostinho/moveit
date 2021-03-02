@@ -14,8 +14,8 @@ export function Main() {
       <Head>
         <title>Inicio | Moveit</title>
       </Head>
-      <ExperienceBar></ExperienceBar>
-      <section>
+      <ExperienceBar/>
+      <section className="pageFadeIn">
         <CountDownProvider>
           <div>
 

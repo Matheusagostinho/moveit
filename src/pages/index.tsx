@@ -5,6 +5,7 @@ import { GetServerSideProps } from 'next'
 import { useSession, getSession } from 'next-auth/client'
 import  Router  from 'next/router'
 import { useEffect } from 'react'
+import { Main } from 'containers/Main'
 
 
 
@@ -30,7 +31,7 @@ export default function Home() {
   <>
     {session && (
       <div>
-        <h1>Carrregando...</h1>
+        <Main/>
       </div>
     )}
     {!session && <LogIn />}

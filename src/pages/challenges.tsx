@@ -1,7 +1,8 @@
+import { LogIn } from 'containers/LogIn'
 import { Main } from 'containers/Main'
 import { ChallengeProvider } from 'contexts/ChallengeContext'
 import { GetServerSideProps } from 'next'
-import { getSession, useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/client'
 import Router from 'next/router'
 import { useEffect } from 'react'
 interface HomeProps {
@@ -30,7 +31,7 @@ export default function Challagens(props: HomeProps) {
     return (
       <>
         <div>
-          <h1>Carregando...</h1>
+          <LogIn/>
         </div>
       </>
     )
