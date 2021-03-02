@@ -22,8 +22,15 @@ export const Container = styled.div`
     align-content: center;
   }
 
-
-    > button{
+  > footer {
+     @media (max-width: 720px) {
+      margin-top: 7rem;
+    }
+    display:flex;
+    align-items:center;
+    justify-content:center;
+     button{
+    flex:1;
     background:transparent;
     width:100%;
     max-width:100px;
@@ -31,17 +38,13 @@ export const Container = styled.div`
     font-size:1.5rem;
     border:0;
     transition: color 0.2s ease 0s;
-    @media (max-width: 720px) {
-      margin-top: 7rem;
+
     :hover{
       color:#fafafa;
     }
 
   }
-
-
   }
-
 
   @media (max-width: 720px) {
     section {
