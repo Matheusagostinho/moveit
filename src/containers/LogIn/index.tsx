@@ -1,9 +1,8 @@
 
-import { signIn } from 'next-auth/client'
+import { getSession, signIn } from 'next-auth/client'
 
 import * as S from './styles'
 
-import Button from 'components/Button'
 
 
 
@@ -26,7 +25,9 @@ export function LogIn() {
         </main>
 
         <div>
-        <button onClick={() => signIn('github', {callbackUrl: 'https://moveit-matheusagostinho.vercel.app/challenges'}) }>
+        <button onClick={() => signIn('github', {
+                  callbackUrl: "https://moveit-matheusagostinho.vercel.app/challenges",
+                }) }>
             <img src="/icons/Github.svg" alt="github logo" />
             SignIn with GitHub
           </button>
@@ -35,4 +36,24 @@ export function LogIn() {
     </S.Container>
   )
 }
+
+export const getServerSideProps = async (ctx) => {
+  const { req, res } = ctx;
+  const session = await getSession({ req });
+
+  if (session && req) {
+    res.writeHead(302, {
+      Location: "/challenges",
+    });
+
+    res.end();
+    return {
+      props: {},
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
 
