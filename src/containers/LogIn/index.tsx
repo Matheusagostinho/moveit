@@ -25,7 +25,10 @@ export function LogIn() {
         </main>
 
         <div>
-        <button onClick={() => signIn('github') }>
+        <button onClick={() => signIn('github', {
+                  callbackUrl: "https://moveit-matheusagostinho.vercel.app/challenges",
+                  redirect_uri:"https://moveit-matheusagostinho.vercel.app/challenges"
+                }) }>
             <img src="/icons/Github.svg" alt="github logo" />
             SignIn with GitHub
           </button>
@@ -35,24 +38,4 @@ export function LogIn() {
     </S.Container>
   )
 }
-
-export const getServerSideProps = async (ctx) => {
-  const { req, res } = ctx;
-  const session = await getSession({ req });
-
-  if (session) {
-    res.writeHead(302, {
-      Location: "/challenges",
-    });
-
-    res.end();
-    return {
-      props: {},
-    };
-  }
-
-  return {
-    props: {},
-  };
-};
 
