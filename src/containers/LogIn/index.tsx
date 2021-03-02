@@ -24,7 +24,7 @@ export function LogIn() {
             {/* <img src="/icons/Github.svg" alt="github logo" /> */}
             SignIn with GitHub
           </button>
-          <button onClick={() => signIn('facebook') }>
+          <button onClick={() => signIn('auth0') }>
             SignIn with Facebook
           </button>
 

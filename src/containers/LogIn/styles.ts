@@ -13,11 +13,23 @@ export const Container = styled.div`
   align-items: flex-end;
   @media (max-width: 720px) {
     align-items: center;
+
     }
   header{
+    display:flex;
+    align-items:center;
     margin-top:-5rem;
+
     @media (max-width: 720px) {
       margin-top:-10rem;
+      padding-left:15px;
+      padding-right:15px;
+    }
+    >img{
+      flex:1;
+      @media (max-width: 720px) {
+      width:80%;
+    }
     }
   }
 
@@ -32,8 +44,7 @@ export const Container = styled.div`
       margin-right: 12.5rem;
     }
     @media (max-width: 720px) {
-      padding-left:2rem;
-      padding-right:2rem;
+
 
     }
     > main{
