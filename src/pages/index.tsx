@@ -25,6 +25,7 @@ export default function Home({session}: LoginProps) {
       Router.push('/challenges')
     }
   }, [session])
+
   return (
   <>
     {session && (
@@ -40,10 +41,17 @@ export default function Home({session}: LoginProps) {
 }
 
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const session = await getSession(ctx)
-  return {
-    props: { session },
+export const getServerSideProps: GetServerSideProps = async ({req, res}) => {
+  const session = await getSession({ req });
+
+  if (!session) {
+    res.writeHead(302, {
+      Location: "/challanges",
+    });
+    res.end();
+    return {
+      props: {session},
+    };
   }
 }
 

@@ -18,24 +18,7 @@ interface CookiesProps {
 
 export default function Challagens(props: HomeProps) {
 
-  const [session] = useSession()
 
-  if (!session) {
-    useEffect(() => {
-      setTimeout(() => {
-        Router.push('/')
-      }, 1000)
-    }, [])
-    return (
-      <>
-
-          <h1>Carregando...</h1>
-
-      </>
-    )
-  }
-
-  if (session) {
 
   return (
     <ChallengeProvider
@@ -46,7 +29,6 @@ export default function Challagens(props: HomeProps) {
     <Main></Main>
     </ChallengeProvider>
   )
-}
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
@@ -63,7 +45,13 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     res.writeHead(302, {
       Location: "/",
     });
+    res.end();
+    return {
+      props: {},
+    };
   }
+
+
   return {
     props: {
       level: Number(level),
