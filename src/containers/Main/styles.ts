@@ -21,23 +21,21 @@ export const Container = styled.div`
     gap: 6.25rem;
     align-content: center;
   }
-  > footer {
-    display:flex;
-    width:100%;
-    align-items:center;
-    justify-content:space-between;
-    @media (max-width: 720px) {
-    margin-top: 5rem;
+
+
+
   }
-    button{
+    > button{
     flex: 1;
-    background:#FFF;
+    background:transparent;
     width:100%;
     max-width:100px;
     color:#8F8F8F;
     font-size:1.5rem;
     border:0;
     transition: color 0.2s ease 0s;
+    @media (max-width: 720px) {
+      margin-top: 7rem;
     :hover{
       color:#fafafa;
     }

@@ -56,6 +56,10 @@ export const Container = styled.div`
         font-weight: 600;
         transition: background-color 0.2s;
         width:100%;
+        @media (max-width: 720px) {
+          width:95%;
+
+    }
         background-image: linear-gradient(
           to right,
           rgba(73, 83, 184),
