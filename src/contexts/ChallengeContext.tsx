@@ -34,7 +34,7 @@ interface ChallengeContextData {
 }
 
 export function isMobile(): boolean {
-  return /Safari|iOS Safari|iPhone|iPad|iPod|BlackBerry|Opera Mini/i.test(navigator.userAgent);
+  return / Safari|iOS Safari|iPhone|iPad|iPod|BlackBerry|Opera Mini/i.test(navigator.userAgent);
 }
 
 
@@ -67,7 +67,7 @@ export function ChallengeProvider({
     setIsLevelUpModalOpen(false)
   }
   useEffect(() => {
-   if(!isMobile()){
+   if(isMobile()){
     Notification.requestPermission()
    }
    console.log(isMobile());
@@ -89,7 +89,7 @@ export function ChallengeProvider({
     const randomChallengeIndex = Math.floor(Math.random() * challenges.length)
     const challenge = challenges[randomChallengeIndex]
     setActiveChallenge(challenge)
-    if(!isMobile()){
+    if(isMobile()){
       new Audio('/notification.mp3').play()
 
 
