@@ -20,11 +20,6 @@ interface LoginProps{
 export default function Home({session}: LoginProps) {
 
 
-  useEffect(() => {
-    if (session) {
-      Router.push('/challenges')
-    }
-  }, [session])
 
   return (
   <>
@@ -44,7 +39,7 @@ export default function Home({session}: LoginProps) {
 export const getServerSideProps: GetServerSideProps = async ({req, res}) => {
   const session = await getSession({ req });
 
-  if (!session) {
+  if (session) {
     res.writeHead(302, {
       Location: "/challanges",
     });
