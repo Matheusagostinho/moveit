@@ -22,10 +22,16 @@ export const Container = styled.div`
     align-content: center;
   }
   > footer {
-      align-items:center;
-      display:flex;
+    display:flex;
+    width:100%;
+    align-items:center;
+    justify-content:space-between;
+    @media (max-width: 720px) {
+    margin-top: 5rem;
+  }
     button{
-    background:transparent;
+    flex: 1;
+    background:#FFF;
     width:100%;
     max-width:100px;
     color:#8F8F8F;
