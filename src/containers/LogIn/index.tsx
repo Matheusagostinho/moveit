@@ -31,6 +31,12 @@ export function LogIn() {
             <img src="/icons/Github.svg" alt="github logo" />
             SignIn with GitHub
           </button>
+          <button onClick={() => signIn('facebok', {
+                  callbackUrl: "https://moveit-matheusagostinho.vercel.app/challenges",
+                }) }>
+            <img src="/icons/Github.svg" alt="github logo" />
+            SignIn with Facebook
+          </button>
         </div>
       </div>
     </S.Container>
