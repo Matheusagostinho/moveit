@@ -24,7 +24,6 @@ export const Container = styled.div`
 
 
     > button{
-    flex: 1;
     background:transparent;
     width:100%;
     max-width:100px;
