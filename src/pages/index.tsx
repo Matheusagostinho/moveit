@@ -40,22 +40,11 @@ export default function Home({session}: LoginProps) {
 }
 
 
-export const getServerSideProps = async (ctx) => {
-  const { req, res } = ctx;
-  const session = await getSession({ req });
-
-  if (session && req) {
-    res.writeHead(302, {
-      Location: "/challenges",
-    });
-
-    res.end();
-    return {
-      props: {},
-    };
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getSession(ctx)
+  return {
+    props: { session },
   }
-
-
-};
+}
 
 
