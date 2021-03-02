@@ -5,7 +5,7 @@ import { GetServerSideProps } from 'next'
 import { useSession, getSession } from 'next-auth/client'
 import  Router  from 'next/router'
 import { useEffect } from 'react'
-import { Main } from 'containers/Main'
+import Head from 'next/head'
 
 
 
@@ -27,7 +27,17 @@ export default function Home() {
 
 
   return (
-       <LogIn />
+    <>
+    <Head>
+    <title>Faça o login | move.it</title>
+  </Head>
+  {loading && (
+    <div>
+    </div>
+  )}
+  {!loading && <LogIn />}
+ </>
+
   )
 }
 
