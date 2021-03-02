@@ -44,10 +44,10 @@ export const getServerSideProps: GetServerSideProps = async ({req, res}) => {
       Location: "/challanges",
     });
     res.end();
-    return {
-      props: {session},
-    };
   }
+  return {
+    props: {session}
+  };
 }
 
 
