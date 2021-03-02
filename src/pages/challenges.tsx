@@ -1,4 +1,5 @@
 import { LogIn } from 'containers/LogIn'
+import { LogInBG } from 'containers/LogInBG'
 import { Main } from 'containers/Main'
 import { ChallengeProvider } from 'contexts/ChallengeContext'
 import { GetServerSideProps } from 'next'
@@ -26,10 +27,10 @@ export default function Challagens(props: HomeProps) {
     useEffect(() => {
       setTimeout(() => {
         Router.push('/')
-      }, 1000)
+      })
     }, [])
     return(
-      <Main/>
+      <LogInBG/>
     )
   }
 
